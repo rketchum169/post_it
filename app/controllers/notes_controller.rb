@@ -22,5 +22,6 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @note.destropy
+    @note.destroy
   end
+end
