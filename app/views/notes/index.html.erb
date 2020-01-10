@@ -1,12 +1,16 @@
 
 <body>
 <h3>R&J Present<h3>
-<h1>POST IT PARTY<h1>
+<h1>POST-IT PARTY &reg;<h1>
+<hr>
+<p>Post & Read as you please <p>
 <% @notes.each do |note| %>
     <p>
+    <div class = "post">
     <%= note.body %>
     <%= link_to("EDIT", edit_note_path(note.id))%>
     <%= link_to("DELETE", note_path(note.id), method: :delete, data: {confirm: "Are you really sure you want to delete this note?"}) %>
+    </div>
     </p>
 <% end %>
 </body>
