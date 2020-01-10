@@ -5,23 +5,44 @@ class NotesController < ApplicationController
   end
 
   def show
-  end
+    @note = Note.find(params[:id])
+end
 
   def new
     @note = Note.new
   end
 
   def edit
-  end
+    @note = Note.find(params[:id])
+end
 
   def create
     @note = Note.new(note_params)
-  end
+    if @note.save
+      redirect_to(notes_path)
+    else
+      render(:new)
+    end
+ end
 
-  def update
+ def update
+  @note = Note.find(params[:id])
+  if @note.update(note_params)
+      redirect_to(notes_path)
+  else
+      render(:edit)
   end
+end 
 
-  def destroy
-    @note.destroy
-  end
+def destroy
+  @note = Note.find(params[:id])
+  @note.destroy
+  redirect_to(notes_path)
+
+end
+
+def note_params
+  params.require(:note).permit(:body)
+end
+
 end
