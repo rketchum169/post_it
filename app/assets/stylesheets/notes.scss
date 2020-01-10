@@ -1,3 +1,17 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+h1 {
+  margin-left: 15%;
+  color: yellow;
+  font-size: 3em;
+  margin-top: .1em;
+  margin-bottom: .1em;
+}
+
+body {
+  background-image: url(post_it_background);
+  background-size: cover;
+
+}
