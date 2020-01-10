@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PostIt</title>
+    <title>Post-It Party</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,10 @@
   </head>
 
   <body>
+    <nav>
+      <%= link_to("Home", root_path) %>
+      <%= link_to("Create Note", new_note_path) %>
+    </nav>
     <%= yield %>
   </body>
 </html>
